@@ -13,16 +13,16 @@ export default function Home() {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [isClosing, setIsClosing] = useState(false);
 
-  // Helper function to close modal with animation
+
   const closeModal = () => {
     setIsClosing(true);
     setTimeout(() => {
       setIsModalOpen(false);
       setIsClosing(false);
-    }, 300); // Match animation duration
+    }, 300);
   };
 
-  // Handle Escape key to close modal
+
   useEffect(() => {
     const handleEscape = (e: KeyboardEvent) => {
       if (e.key === 'Escape' && isModalOpen) {
@@ -63,7 +63,7 @@ export default function Home() {
   }
 
   return (
-   
+
     <div className="">
     <div className="relative bg-black-6">
       <div className=" bg-[url('/assets/svg/Noise.svg')] bg-blend-darken bg-repeat bg-opacity-[5%]">
@@ -73,7 +73,7 @@ export default function Home() {
             <div className="glass border-2 border-solid border-transparent pb-[80px] bg-blend-luminosity w-full rounded-[38px] shadow-lg">
               <div className="3xl:max-w-[1400px] 3xl:mx-auto px-[50px]">
                 <header className="flex justify-between items-center py-[33.92px] px-12 gradient-border-4">
-                 
+
                     <Link href="/">
                       <Image
                         src="/assets/svg/Logo.png"
@@ -85,7 +85,7 @@ export default function Home() {
                     </Link>
                     <div className="header-menu-bg rounded-xl gap-8 py-[13px] px-[20px] flex">
                       <div className="flex items-center gap-2.5">
-                        
+
                         <div className='flex items-center gap-[8px]'>
                         <Image
                           src="/assets/svg/box.svg"
@@ -103,9 +103,9 @@ export default function Home() {
                         v1.beta
                       </span>
                     </div>
-                  
+
                   <div className="">
-                   
+
                     <div className="flex items-center justify-center rounded-xl w-[40px] h-[40px] bg-blue-2 rounded-full glass ">
                       <Image
                         src="/assets/svg/github.svg"
@@ -117,7 +117,7 @@ export default function Home() {
                     </div>
                   </div>
                 </header>
-                
+
                 <div className="flex flex-col">
                   <div className="mdl:px-[92px] sm:px-[54px] px-4 flex mlap:flex-row flex-col justify-between items-center">
                     <div className="relative md:w-[545px] w-fit mt-[32px]">
@@ -169,7 +169,7 @@ export default function Home() {
                             </p>
                           </div>
                         </div>
-                       
+
                       </div>
                     </div>
                     <div className="flex items-center mt-[32px] mlap:right-0">
@@ -180,17 +180,17 @@ export default function Home() {
                               Documentation
                             </h2>
                                                             <p className="text-[16px] sm:max-w-[340px] w-[300px] font-lecturis font-normal leading-[26px] text-white-base">
-  Kickstart your projects with a <span className="text-blue-3">custom boilerplate</span> powered by Next.js, Radix UI, and Tailwind CSS.  
+  Kickstart your projects with a <span className="text-blue-3">custom boilerplate</span> powered by Next.js, Radix UI, and Tailwind CSS.
   Save time with pre-built, reusable components and automated GitHub/GitLab setup—so you can focus on building, not configuring.
                             </p>
                           </div>
                         </div>
                       </div>
-                   
+
                     </div>
                   </div>
                   <div className="flex flex-col items-center mt-[4rem] sm:mt-[-5rem]">
-                    <button 
+                    <button
                       className='action-button cursor-pointer'
                       onClick={() => setIsModalOpen(true)}
                     >
@@ -216,7 +216,7 @@ export default function Home() {
                           to get started.
                         </p>
                       </div>
-                  
+
                     </div>
                   </div>
                 </div>
@@ -226,14 +226,14 @@ export default function Home() {
         </div>
       </div>
     </div>
-    
+
       {/* Modal */}
       {isModalOpen && (
-        <div 
+        <div
           className={`fixed inset-0 bg-black-5 backdrop-blur-12 flex items-center justify-center z-50 ${isClosing ? 'animate-fadeOut' : 'animate-fadeIn'}`}
           onClick={closeModal}
           role='dialog'
-          style={{ 
+          style={{
             position: 'fixed',
             top: 0,
             left: 0,
@@ -244,7 +244,7 @@ export default function Home() {
             justifyContent: 'center'
           }}
         >
-          <div 
+          <div
             className={`glass px-[12px] pb-[24px] border-2 border-solid border-transparent bg-background-1 rounded-[12px] p-6 max-w-lg w-full mx-4 ${isClosing ? 'animate-scaleOut' : 'animate-scaleIn'}`}
             onClick={(e) => e.stopPropagation()}
             style={{
@@ -268,7 +268,7 @@ export default function Home() {
                   ×
                 </button>
               </div>
-  
+
               <select
                 value={provider}
                 onChange={(e) => setProvider(e.target.value as 'github' | 'gitlab')}

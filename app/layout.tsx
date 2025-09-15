@@ -26,7 +26,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className="transition bg-background-1 bg-blend-color-dodge bg-[url('/assets/svg/AmethystPhone.svg')] lt:bg-[url('/assets/svg/Amethyst.svg')] bg-no-repeat">
+        className={`${geistSans.variable} ${geistMono.variable} transition bg-background-1 bg-blend-color-dodge bg-[url('/assets/svg/AmethystPhone.svg')] lt:bg-[url('/assets/svg/Amethyst.svg')] bg-no-repeat`}>
         {children}
       </body>
     </html>

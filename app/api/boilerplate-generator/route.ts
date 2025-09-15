@@ -2,7 +2,7 @@ import { NextRequest, NextResponse } from 'next/server';
 
 
 
-export async function GET(req: NextRequest) {
+export async function GET() {
   return NextResponse.json({ message: 'API is alive 🚀' });
 }
 
@@ -61,7 +61,7 @@ export async function POST(req: NextRequest) {
       const token = process.env.GITLAB_TOKEN!;
       const base = process.env.GITLAB_BASE_URL || 'https://gitlab.com';
 
-      const body: Record<string, any> = {
+      const body: Record<string, string | number | boolean> = {
         name: projectName,
         namespace_id: Number(namespace),
         visibility: visibility || 'private',
@@ -89,7 +89,8 @@ export async function POST(req: NextRequest) {
     }
 
     return NextResponse.json({ message: 'Unknown provider' }, { status: 400 });
-  } catch (err: any) {
-    return NextResponse.json({ message: err?.message || 'Server error' }, { status: 500 });
+  } catch (err: unknown) {
+    const errorMessage = err instanceof Error ? err.message : 'Server error';
+    return NextResponse.json({ message: errorMessage }, { status: 500 });
   }
 }

@@ -1,0 +1,21 @@
+ "For new projects, never create a src/ folder. Always use app/ as the root source folder.",
+    "If an existing project already uses src/, continue using src/ instead of app/.",
+
+    "Inside app/, the following subfolders exist and must always be used for new projects:",
+    "- (pages) → Next.js App Router pages.",
+    "- _api → API client functions and API-related utilities.",
+    "- _components → shared and UI components.",
+    "- _constants → constant values such as enums, config values, tokens.",
+    "- _hooks → custom React hooks.",
+    "- _layouts → layout wrappers for pages or sections.",
+    "- _providers → React context providers and global wrappers.",
+    "- _stores → state management (Zustand, Redux, etc).",
+    "- _styles → global styles or Tailwind config extensions.",
+    "- _types → TypeScript types and interfaces.",
+    "- _validations → validation schemas (e.g. Zod, Yup).",
+
+    "When generating new files, always place them in the correct subfolder instead of creating new ones.",
+    "When updating or searching for existing files, always look inside app/ (or src/ if the project uses src/).",
+
+    "Use functional React components only; class components are forbidden.",
+    "Use Next.js App Router (app/) instead of pages/ router for new projects.",

@@ -1,5 +1,4 @@
-@tailwind base;
-@tailwind components;
+
 @tailwind utilities;
 
 @theme {
@@ -251,4 +250,7 @@ body{
 .action-button:focus{
   outline: none;
   border: none;
+}
+button{
+    cursor: pointer;
 }
